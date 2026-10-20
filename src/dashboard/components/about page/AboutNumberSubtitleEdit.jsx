@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -9,7 +9,7 @@ function AboutNumberSubtitleEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  const [subtitles, setSubtitles] = useState([]);
+  // const [subtitles, setSubtitles] = useState([]);
   const initialStateSubtitle = {
     title: "",
     content: "",
@@ -36,7 +36,7 @@ function AboutNumberSubtitleEdit() {
       }
     };
     fetchSubtitle();
-  }, []);
+  }, [id]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ function AboutNumberSubtitleEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});

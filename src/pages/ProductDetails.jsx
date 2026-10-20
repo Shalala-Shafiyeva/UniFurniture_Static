@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import "../components/productDetails/productDetails.css";
 import "../components/productDetails/productDetailsResponsive.css";
 import Header from "../components/header/Header";
 import Main from "../components/productDetails/Main";
 import ProductOverview from "../components/productDetails/ProductOverview";
-import SimilarProducts from "../components/productDetails/SimilarProducts";
+// import SimilarProducts from "../components/productDetails/SimilarProducts";
 import Footer from "../components/footer/Footer";
 import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ function ProductDetails() {
   const allProducts = useSelector((state) => state.products.products);
   const { type, id } = useParams();
   const product = allProducts.find(
-    (prod) => prod.id == id && prod.type == type
+    (prod) => prod.id === id && prod.type === type
   );
   // console.log(product, "product");
 

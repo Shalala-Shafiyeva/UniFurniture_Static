@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -6,7 +6,7 @@ import "../css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function ColorEdit() {
-  const [color, setColor] = useState([]);
+  // const [color, setColor] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
   const [value, setValue] = useState("");
@@ -25,7 +25,7 @@ function ColorEdit() {
         }
       );
       const result = await response.json();
-      setColor(result.data || []);
+      // setColor(result.data || []);
       setValue(result.data.name);
     } catch (err) {
       console.log("Error fetching: ", err);
@@ -55,13 +55,13 @@ function ColorEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           navigate("/dashboard/product/color");
           return;
         }

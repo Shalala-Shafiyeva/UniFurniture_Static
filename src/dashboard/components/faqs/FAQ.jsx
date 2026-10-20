@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link } from "react-router-dom";
@@ -58,7 +58,7 @@ function FAQ() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setFaqs(faqs.filter((faq) => faq.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -79,7 +79,7 @@ function FAQ() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -106,7 +106,7 @@ function FAQ() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setFaqs(faqs.filter((faq) => faq.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -202,17 +202,17 @@ function FAQ() {
             </div>
             <div className="row p-4">
               <h2>FAQs</h2>
-              {faqs?.length == 0 ? (
+              {faqs?.length === 0 ? (
                 <p>No FAQ found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Question</td>
-                      <td scope="col">Answer</td>
-                      <td scope="col">Option</td>
-                      <td scope="col">Publish</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Question</th>
+                      <th scope="col">Answer</th>
+                      <th scope="col">Option</th>
+                      <th scope="col">Publish</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

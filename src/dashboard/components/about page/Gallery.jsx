@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ function Gallery() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setImages(images.filter((image) => image.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -67,7 +67,7 @@ function Gallery() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
 
       } else {
@@ -124,14 +124,14 @@ function Gallery() {
             </div>
             <div className="row p-4">
               <h2>Gallery images of About page</h2>
-              {images.length == 0 ? (
+              {images.length === 0 ? (
                 <p>No image found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Image</td>
-                      <td scope="col">Action</td>
+                      <th scope="col">Image</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>

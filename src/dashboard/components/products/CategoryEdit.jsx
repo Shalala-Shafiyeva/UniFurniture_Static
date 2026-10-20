@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -6,7 +6,7 @@ import "../css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function CategoryEdit() {
-  const [category, setCategory] = useState([]);
+  // const [category, setCategory] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
   const [value, setValue] = useState({ name: "", image: null });
@@ -22,7 +22,7 @@ function CategoryEdit() {
         },
       });
       const result = await response.json();
-      setCategory(result.data || []);
+      // setCategory(result.data || []);
       setValue(result.data);
     } catch (err) {
       console.log("Error fetching: ", err);
@@ -52,13 +52,13 @@ function CategoryEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           navigate("/dashboard/product/category");
           return;
         }

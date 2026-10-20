@@ -15,7 +15,7 @@ function Order() {
     });
 
     const result = await response.json();
-    if (response.status == 200) {
+    if (response.status === 200) {
       setOrders(result.data.filter((order) => order.status !== "CANCELED"));
     }
   };

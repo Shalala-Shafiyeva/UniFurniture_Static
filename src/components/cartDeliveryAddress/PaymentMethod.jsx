@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+// import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 
 function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
@@ -61,7 +61,7 @@ function PaymentMethod({ activateBtn, handleActivateBtn, orderAddress }) {
         newErrors.googlePay = "Google Pay ID tələb olunur";
     }
     setErrors(newErrors);
-    if (Object.keys(newErrors).length == 0) {
+    if (Object.keys(newErrors).length === 0) {
       localStorage.setItem("paymentMethod", activeBtn);
     }
     return Object.keys(newErrors).length === 0;

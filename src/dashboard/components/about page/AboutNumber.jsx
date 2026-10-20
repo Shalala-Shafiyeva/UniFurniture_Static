@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -79,7 +79,7 @@ function AboutNumber() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -110,7 +110,7 @@ function AboutNumber() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -135,7 +135,7 @@ function AboutNumber() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setTitles(titles.filter((title) => title.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -153,7 +153,7 @@ function AboutNumber() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setSubtitles(subtitles.filter((subtitles) => subtitles.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -286,15 +286,15 @@ function AboutNumber() {
             </div>
             <div className="row p-4">
               <h2>Titles of About page</h2>
-              {titles.length == 0 ? (
+              {titles.length === 0 ? (
                 <p>No title found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Title</td>
-                      <td scope="col">Published</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Title</th>
+                      <th scope="col">Publisheh</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -334,15 +334,15 @@ function AboutNumber() {
             </div>
             <div className="row p-4">
               <h2>Subtitles of number section About page</h2>
-              {subtitles.length == 0 ? (
+              {subtitles.length === 0 ? (
                 <p>No subtitle found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Subtile</td>
-                      <td scope="col">Content</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Subtitle</th>
+                      <th scope="col">Content</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

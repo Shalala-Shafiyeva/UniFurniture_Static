@@ -1,45 +1,45 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
 function Paralax2() {
-  const [title, setTitle] = useState("");
-  const [subtitles, setSubtitles] = useState([]);
-  useEffect(() => {
-    const fetchTitle = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/about/number-title",
-          {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+  // const [title, setTitle] = useState("");
+  // const [subtitles, setSubtitles] = useState([]);
+  // useEffect(() => {
+  //   const fetchTitle = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://localhost:8000/api/about/number-title",
+  //         {
+  //           method: "GET",
+  //           headers: { "Content-Type": "application/json" },
+  //         }
+  //       );
 
-        const result = await response.json();
-        setTitle(result);
-      } catch (error) {
-        console.log("Error: ", error);
-      }
-    };
+  //       const result = await response.json();
+  //       setTitle(result);
+  //     } catch (error) {
+  //       console.log("Error: ", error);
+  //     }
+  //   };
 
-    const fetchSubtitles = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/about/number-subtitle",
-          {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
-        const result = await response.json();
-        setSubtitles(result);
-      } catch (error) {
-        console.log("Error: ", error);
-      }
-    };
+  //   const fetchSubtitles = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://localhost:8000/api/about/number-subtitle",
+  //         {
+  //           method: "GET",
+  //           headers: { "Content-Type": "application/json" },
+  //         }
+  //       );
+  //       const result = await response.json();
+  //       setSubtitles(result);
+  //     } catch (error) {
+  //       console.log("Error: ", error);
+  //     }
+  //   };
 
-    fetchTitle();
-    fetchSubtitles();
-  }, []);
+  //   fetchTitle();
+  //   fetchSubtitles();
+  // }, []);
 
   return (
     <section className="paralax2" data-aos="fade-up">

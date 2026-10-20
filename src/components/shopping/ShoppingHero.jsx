@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+// import React, { useState, useEffect } from "react";
+// import { useSelector } from "react-redux";
 
 function ShoppingHero({
   // searchValue,
   // handleSearchInputChange,
-  fetchProducts,
-  fetchedProducts,
+  // fetchProducts,
+  // fetchedProducts,
   handleFilterChange,
   filters,
-  filteredKey,
+  // filteredKey,
   setFilteredKey,
 }) {
   // const filteredProducts = useSelector(

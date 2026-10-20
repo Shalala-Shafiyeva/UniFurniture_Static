@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect, useCallback } from "react";
+// import { useSelector } from "react-redux";
 
 function CustomerInfo() {
   // const cart = useSelector((state) => state.cart.cart);
@@ -23,7 +23,7 @@ function CustomerInfo() {
 
   const handleUserInfoChange = (e) => {
     const { name, value, files } = e.target;
-    const fieldValue = value == "null" ? null : value;
+    const fieldValue = value === "null" ? null : value;
     if (name === "profile" && files.length > 0) {
       setUserInfo({ ...userInfo, [name]: files[0] });
     } else {
@@ -68,7 +68,7 @@ function CustomerInfo() {
         body: formData,
       });
       const result = await response.json();
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors);
         setOpenForm(true);
       } else {

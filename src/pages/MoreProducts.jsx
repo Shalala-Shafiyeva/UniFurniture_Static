@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../components/moreProducts/moreProducts.css";
 import "../components/moreProducts/moreProductsResponsive.css";
 import Header from "../components/header/Header";
@@ -134,7 +134,7 @@ function MoreProducts() {
     }
 
     return result;
-  }, [data?.products, filters.created_at, filters.highest, filters.lowest]);
+  }, [filters.created_at, filters.highest, filters.lowest]);
 
   useEffect(() => {
     formatFilters();

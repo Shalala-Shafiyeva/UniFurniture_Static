@@ -73,7 +73,7 @@ function Team() {
         {data.membersOfTeam.map((member) => (
           <div key={member.id} className="card">
             <div className="img">
-              <img src={member.img} alt="Membber image" />
+              <img src={member.img}/>
             </div>
             <div className="desc">
               <span>

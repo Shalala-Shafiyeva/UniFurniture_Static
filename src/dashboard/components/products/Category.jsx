@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Category() {
   const [categories, setCategories] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [value, setValue] = useState({ name: "", image: null });
   const [errors, setErrors] = useState({});
   const token = localStorage.getItem("token");
@@ -43,7 +43,7 @@ function Category() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setCategories(categories.filter((type) => type.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -66,13 +66,13 @@ function Category() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           //   navigate("/dashboard/products");
           return;
         }
@@ -132,7 +132,7 @@ function Category() {
               </div>
             </div>
             <div className="row p-4">
-              {categories.length == 0 ? (
+              {categories.length === 0 ? (
                 <h3>No categories found</h3>
               ) : (
                 <table className="table">

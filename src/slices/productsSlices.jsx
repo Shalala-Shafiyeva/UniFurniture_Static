@@ -17,7 +17,7 @@ export const productsSlice = createSlice({
     filterProducts(state, action) {
       try {
         const filter = data.products.filter(
-          (product) => product.type == action.payload
+          (product) => product.type === action.payload
         );
         state.filteredProducts = filter;
         const saveState = JSON.stringify(filter);
@@ -30,7 +30,7 @@ export const productsSlice = createSlice({
       const { id, type } = action.payload;
       try {
         const oneProduct = data.products.filter(
-          (product) => product.id == id && product.type == type
+          (product) => product.id === id && product.type === type
         );
         state.singleProduct = oneProduct;
         const saveState = JSON.stringify(oneProduct);
@@ -139,7 +139,7 @@ export const productsSlice = createSlice({
       }
     },
     filterByCategory(state, action) {
-      let tempProducts = state.products;
+      // let tempProducts = state.products;
       const category = action.payload;
 
       if (state.selectedCategories.includes(category)) {
@@ -172,7 +172,7 @@ export const productsSlice = createSlice({
     filterByStock(state, action) {
       try {
         const filteredByStock = state.products.filter(
-          (product) => product.hasStock == action.payload
+          (product) => product.hasStock === action.payload
         );
         state.filteredProducts = filteredByStock;
         if (filteredByStock.length) {
@@ -190,7 +190,7 @@ export const productsSlice = createSlice({
     filterBySale(state, action) {
       try {
         const filteredBySale = state.products.filter(
-          (product) => product.onSale == action.payload
+          (product) => product.onSale === action.payload
         );
         state.filteredProducts = filteredBySale;
         if (filteredBySale.length) {

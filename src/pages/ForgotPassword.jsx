@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import "../components/forgotPassword/forgotPassword.css";
 import { useNavigate } from "react-router-dom";
@@ -26,10 +26,10 @@ function ForgotPassword() {
       const result = await response.json();
       console.log(result);
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
         setInvalidCredentials("");
-      } else if (response.status == 401) {
+      } else if (response.status === 401) {
         setInvalidCredentials(result.message);
         setErrors({});
       } else {

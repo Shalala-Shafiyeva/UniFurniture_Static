@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { singledProduct } from "../../slices/productsSlices";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addToCart } from "../../slices/cartSlice";
 import toast, { Toaster } from "react-hot-toast";
-import { useMutation, useQueryClient } from "react-query";
+// import { useMutation, useQueryClient } from "react-query";
 
 function Furnitures({
   filteredData,
   // handleCategoryFilter,
-  fetchProducts,
+  // fetchProducts,
   fetchedProducts,
-  handleFilterChange,
-  filters,
+  // handleFilterChange,
+  // filters,
   setFilters,
   filteredKey,
 }) {
   // without backend
   const dispatch = useDispatch();
   // const cart = useSelector((state) => state.cart.cart);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   //Fetch All Products
   // const [categories, setCategories] = useState([]);
 
@@ -96,33 +96,33 @@ function Furnitures({
   };
 
   //filter btns
-  const filterBtns = [
-    {
-      id: 1,
-      name: "Office",
-      img: "/images/shop/office.svg",
-    },
-    {
-      id: 2,
-      name: "Wardrobe",
-      img: "/images/shop/wardrobe.svg",
-    },
-    {
-      id: 3,
-      name: "Sofa",
-      img: "/images/shop/sofa.svg",
-    },
-    {
-      id: 4,
-      name: "Table",
-      img: "/images/shop/table.svg",
-    },
-    {
-      id: 5,
-      name: "Chair",
-      img: "/images/shop/chair.svg",
-    },
-  ];
+  // const filterBtns = [
+  //   {
+  //     id: 1,
+  //     name: "Office",
+  //     img: "/images/shop/office.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Wardrobe",
+  //     img: "/images/shop/wardrobe.svg",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Sofa",
+  //     img: "/images/shop/sofa.svg",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Table",
+  //     img: "/images/shop/table.svg",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Chair",
+  //     img: "/images/shop/chair.svg",
+  //   },
+  // ];
 
   //make clicked filter btn active
   // const activeBtn = (el) => {
@@ -140,25 +140,25 @@ function Furnitures({
   //   el.target.parentElement.classList.add("active");
   // };
   const [activeSort, setActiveSort] = useState("");
-  const handleActiveBtn = (btn) => {
-    if (activeSort === btn) {
-      setActiveSort("");
-      setFilters((prevFilters) => ({
-        ...prevFilters,
-        categories: null,
-      }));
-    } else {
-      setActiveSort(btn);
-    }
-  };
+  // const handleActiveBtn = (btn) => {
+  //   if (activeSort === btn) {
+  //     setActiveSort("");
+  //     setFilters((prevFilters) => ({
+  //       ...prevFilters,
+  //       categories: null,
+  //     }));
+  //   } else {
+  //     setActiveSort(btn);
+  //   }
+  // };
 
-  const success = () => {
-    toast.success("Məhsul səbətə əlavə edildi");
-  };
+  // const success = () => {
+  //   toast.success("Məhsul səbətə əlavə edildi");
+  // };
 
-  const error = () => {
-    toast.error("Təəssüf ki məhsul bitmişdir");
-  };
+  // const error = () => {
+  //   toast.error("Təəssüf ki məhsul bitmişdir");
+  // };
 
   const handleAddToCart = (product) => {
     if (product.hasStock) {
@@ -303,7 +303,7 @@ function Furnitures({
           <div className="products">
             {
               // filteredData.length === 0 ? (
-              !fetchedProducts.length && filteredKey == true ? (
+              !fetchedProducts.length && filteredKey === true ? (
                 <div className="notFound">
                   Təəssuflər ki məhsul tapılmadı.
                 </div>

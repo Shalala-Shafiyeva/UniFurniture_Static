@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import data from "../../data.json";
+import { useDispatch } from "react-redux";
+// import data from "../../data.json";
 import { singledProduct } from "../../slices/productsSlices";
 
 function SimilarProducts({ similarProducts }) {

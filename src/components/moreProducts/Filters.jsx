@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import {
   filterByColor,
   filterByCategory,
@@ -8,11 +8,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 function Filters({
-  filters,
-  fetchFilteredProducts,
+  // filters,
+  // fetchFilteredProducts,
   handleFilterChange,
-  handleTypeChange,
-  formatFilters,
+  // handleTypeChange,
+  // formatFilters,
   setFilteredKey,
 }) {
   // const [typeBtns, setTypeBtns] = useState([]);

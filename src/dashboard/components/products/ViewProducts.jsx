@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import "../css/bootstrap.css";
@@ -41,7 +41,7 @@ function ViewProducts() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setProducts(products.filter((product) => product.id !== id));
     } catch (err) {
       console.log("Error fetching: ", err);
@@ -60,7 +60,7 @@ function ViewProducts() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
     } catch (err) {
       console.log("Error fetching: ", err);
     }
@@ -78,7 +78,7 @@ function ViewProducts() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
     } catch (err) {
       console.log("Error fetching: ", err);
     }

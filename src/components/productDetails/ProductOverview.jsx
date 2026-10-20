@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
-import data from "../../data.json";
-import { useParams, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+// import data from "../../data.json";
+import { Link } from "react-router-dom";
+// import { useDispatch } from "react-redux";
 
 function ProductOverview({ product }) {
-  const dispatch = useDispatch();
-  const { id } = useParams();
+  // const dispatch = useDispatch();
+  // const { id } = useParams();
   // let product = useSelector((state) => state.products.singleProduct);
   // product = product[0];
 

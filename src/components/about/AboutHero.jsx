@@ -62,7 +62,7 @@ function AboutHero() {
           </Link>
         </div>
         <div className="img">
-          <img src="/images/aboutheropng.png" alt="Main image" />
+          <img src="/images/aboutheropng.png" />
         </div>
       </div>
     </section>

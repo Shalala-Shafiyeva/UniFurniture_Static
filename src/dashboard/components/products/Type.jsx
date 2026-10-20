@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
@@ -43,14 +43,14 @@ function Type() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setTypes(types.filter((type) => type.id !== id));
     } catch (err) {
       console.log("Error: ", err);
     }
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [value, setValue] = useState("");
   const [errors, setErrors] = useState({});
 
@@ -72,13 +72,13 @@ function Type() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           //   navigate("/dashboard/products");
           return;
         }
@@ -121,7 +121,7 @@ function Type() {
               </div>
             </div>
             <div className="row p-4">
-              {types.length == 0 ? (
+              {types.length === 0 ? (
                 <h3>No types found</h3>
               ) : (
                 <table className="table">

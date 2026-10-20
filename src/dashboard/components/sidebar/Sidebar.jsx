@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Sidebar() {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setIsAuthenticated(true);
+      // setIsAuthenticated(true);
     }
   });
   const handleLogout = async () => {
@@ -24,7 +24,7 @@ function Sidebar() {
 
       if (response.status === 200) {
         localStorage.removeItem("token");
-        setIsAuthenticated(false);
+        // setIsAuthenticated(false);
         navigate("/login");
       }
     } catch (error) {

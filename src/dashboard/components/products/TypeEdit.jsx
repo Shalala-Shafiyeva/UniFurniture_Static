@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,7 +6,7 @@ import "../css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function TypeEdit() {
-  const [type, setType] = useState([]);
+  // const [type, setType] = useState([]);
   const { id } = useParams();
   const token = localStorage.getItem("token");
   const fetchType = async (id) => {
@@ -22,7 +22,7 @@ function TypeEdit() {
         }
       );
       const result = await response.json();
-      setType(result.data || []);
+      // setType(result.data || []);
       setValue(result.data.name);
     } catch (err) {
       console.log("Error fetching: ", err);
@@ -55,13 +55,13 @@ function TypeEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           navigate("/dashboard/product/type");
           return;
         }

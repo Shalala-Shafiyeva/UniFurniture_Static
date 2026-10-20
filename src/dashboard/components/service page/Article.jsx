@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link } from "react-router-dom";
@@ -28,7 +28,7 @@ function Article() {
         }
       );
       const result = await response.json();
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors);
       } else {
         setErrors({});
@@ -50,7 +50,7 @@ function Article() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setTitles(titles.filter((title) => title.id !== id));
     } catch (error) {
       console.log("Delete error: ", error);
@@ -59,16 +59,16 @@ function Article() {
 
   const handlePublishTitle = async (id) => {
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/service-article-title/publish/" + id,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
+      // const response = await fetch(
+      //   "http://localhost:8000/api/service-article-title/publish/" + id,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      //     },
+      //   }
+      // );
     } catch (error) {
       console.log(error);
     }
@@ -105,7 +105,7 @@ function Article() {
         }
       );
       const result = await response.json();
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors);
       } else {
         setErrors({});
@@ -127,7 +127,7 @@ function Article() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setArticles(articles.filter((article) => article.id !== id));
     } catch (error) {
       console.log("Delete error: ", error);
@@ -289,15 +289,15 @@ function Article() {
             </div>
             <div className="row p-4">
               <h2>Titles of Service page</h2>
-              {titles?.length == 0 ? (
+              {titles?.length === 0 ? (
                 <p>No title found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Title</td>
-                      <td scope="col">Published</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Title</th>
+                      <th scope="col">Published</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -337,16 +337,16 @@ function Article() {
             </div>
             <div className="row p-4">
               <h2>Articles of Service page</h2>
-              {articles?.length == 0 ? (
+              {articles?.length === 0 ? (
                 <p>No article found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Title</td>
-                      <td scope="col">Content</td>
-                      <td scope="col">Section title</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Title</th>
+                      <th scope="col">Content</th>
+                      <th scope="col">Section title</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

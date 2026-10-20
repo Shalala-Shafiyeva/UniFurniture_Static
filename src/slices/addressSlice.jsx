@@ -14,8 +14,8 @@ export const addressSlice = createSlice({
     },
     editAddress: (state, action) => {
       const { id, newAddress } = action.payload;
-      const address = state.address.find((a) => a.id == id);
-      if (address != -1) {
+      const address = state.address.find((a) => a.id === id);
+      if (address !== -1) {
         address.adrs = newAddress;
       }
     },

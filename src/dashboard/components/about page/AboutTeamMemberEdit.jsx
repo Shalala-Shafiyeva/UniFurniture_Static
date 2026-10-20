@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
@@ -39,7 +39,7 @@ function AboutTeamMemberEdit() {
       }
     };
     fetchMember();
-  }, []);
+  }, [id]);
 
   const handleMemberFormSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ function AboutTeamMemberEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});

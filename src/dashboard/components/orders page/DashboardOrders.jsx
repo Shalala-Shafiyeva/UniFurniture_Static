@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 
@@ -171,7 +171,7 @@ function DashboardOrders() {
             </div>
             <div className="row p-4">
               <h2>Orders of all Users</h2>
-              {orders?.length == 0 ? (
+              {orders?.length === 0 ? (
                 <p>No order found</p>
               ) : (
                 orders?.map((order) => (
@@ -219,7 +219,7 @@ function DashboardOrders() {
                             <tr>
                               <td className="text-end">Total</td>
                               <td>{order?.total?.toFixed(2)}</td>
-                              {order?.status == "PENDING" && (
+                              {order?.status === "PENDING" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -235,7 +235,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order?.status == "CONFIRMED" && (
+                              {order?.status === "CONFIRMED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -251,7 +251,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order?.status == "SHIPPED" && (
+                              {order?.status === "SHIPPED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>
@@ -267,7 +267,7 @@ function DashboardOrders() {
                                   </td>
                                 </>
                               )}
-                              {order?.status == "DELIVERED" && (
+                              {order?.status === "DELIVERED" && (
                                 <>
                                   <td className="text-end">Action</td>
                                   <td>

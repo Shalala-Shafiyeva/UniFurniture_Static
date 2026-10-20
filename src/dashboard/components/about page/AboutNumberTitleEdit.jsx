@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -29,7 +29,7 @@ function AboutNumberTitleEdit() {
       }
     };
     fetchTitle();
-  }, []);
+  }, [id]);
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
@@ -52,7 +52,7 @@ function AboutNumberTitleEdit() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});

@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addAddress, editAddress } from "../../slices/addressSlice";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+// import { addAddress, editAddress } from "../../slices/addressSlice";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
 function DeliveryAddress({ orderAddress, setOrderAddress }) {
   const [defaultAddress, setDefaultAddress] = useState("");
-  const [validationErrors, setValidationErrors] = useState({});
+  // const [validationErrors, setValidationErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const queryClient = useQueryClient();
@@ -13,8 +13,8 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
   // Fetch addresses
   const {
     data: addresses = [],
-    isLoading,
-    error,
+    // isLoading,
+    // error,
   } = useQuery("addresses", async () => {
     const response = await fetch("http://localhost:8000/api/address/index", {
       method: "GET",
@@ -36,23 +36,23 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
   }, []);
 
   //Fetch Default Address
-  const { data: defaultAddressData = "" } = useQuery(
-    "defaultAddress",
-    async () => {
-      const response = await fetch(
-        "http://localhost:8000/api/address/showDefaultAddress",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      const result = await response.json();
-      return result.data;
-    }
-  );
+  // const { data: defaultAddressData = "" } = useQuery(
+  //   "defaultAddress",
+  //   async () => {
+  //     const response = await fetch(
+  //       "http://localhost:8000/api/address/showDefaultAddress",
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       }
+  //     );
+  //     const result = await response.json();
+  //     return result.data;
+  //   }
+  // );
 
   // Create address
   const createAddressMutation = useMutation(
@@ -191,7 +191,7 @@ function DeliveryAddress({ orderAddress, setOrderAddress }) {
   const [editText, setEditText] = useState("");
   const [openForm, setOpenForm] = useState(false);
   const [openEditFormId, setOpenEditFormId] = useState(null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const addresses = useSelector((state) => state.address.address);
 
   // const handleAdd = () => {

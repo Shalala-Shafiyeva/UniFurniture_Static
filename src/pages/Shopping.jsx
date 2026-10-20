@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/header/Header";
 import "../components/shopping/shopping.css";
 import "../components/shopping/shoppingResponsive.css";
@@ -30,13 +30,13 @@ function Shopping() {
     );
   };
 
-  const handleSearchInputChange = (e) => {
-    setSearchValue(e.target.value.toLowerCase());
-  };
+  // const handleSearchInputChange = (e) => {
+  //   setSearchValue(e.target.value.toLowerCase());
+  // };
 
-  const handleCategoryFilter = (category) => {
-    setSelectedCategory(category);
-  };
+  // const handleCategoryFilter = (category) => {
+  //   setSelectedCategory(category);
+  // };
 
   useEffect(() => {
     let products = data.products;

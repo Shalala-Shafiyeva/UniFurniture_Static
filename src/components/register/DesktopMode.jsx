@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 
@@ -25,7 +25,7 @@ function DesktopMode() {
       const result = await response.json();
       console.log(result);
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
         if (result.errors.checked_policy) {
           setPolicyError("Please accept the terms and conditions.");
@@ -159,11 +159,11 @@ function DesktopMode() {
           <div className="continueWith">
             <span>Və ya davam edin</span>
             <div className="btns">
-              <a href="">
+              <a href="#">
                 <img src="/images/google.png" alt="Google Account" />
                 <span>Google</span>
               </a>
-              <a href="">
+              <a href="#">
                 <img src="/images/twitter.png" alt="Twitter Account" />
                 <span>Twitter</span>
               </a>
@@ -172,7 +172,7 @@ function DesktopMode() {
         </form>
       </div>
       <div className="img">
-        <img src="/images/illustrationSignup.png" alt="Login image" />
+        <img src="/images/illustrationSignup.png"/>
       </div>
     </div>
   );

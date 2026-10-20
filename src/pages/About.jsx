@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/header/Header";
 import AboutHero from "../components/about/AboutHero";
 import PhoneHero from "../components/about/PhoneHero";
@@ -7,7 +7,7 @@ import Banking from "../components/about/Banking";
 import Team from "../components/about/Team";
 import Paralax2 from "../components/about/Paralax2";
 import WeDo from "../components/about/WeDo";
-import CreateAcoount from "../components/about/CreateAcoount";
+// import CreateAcoount from "../components/about/CreateAcoount";
 import "../components/about/about.css";
 import Footer from "../components/footer/Footer";
 import { Helmet } from "react-helmet";

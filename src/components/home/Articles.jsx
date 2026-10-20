@@ -34,7 +34,7 @@ function Articles() {
                 <span className="title">{article.title}</span>
                 <Link to="#">
                   <span>DAHA ƏTRAFLI</span>
-                  <img src="/images/home/Arrow1.png" alt="Lear more" />
+                  <img src="/images/home/Arrow1.png" />
                 </Link>
               </div>
             </div>

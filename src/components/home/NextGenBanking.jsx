@@ -16,15 +16,15 @@ function NextGenBanking() {
               həlli təklif edirik.
             </span>
             <div className="imgDiagram">
-              <img src="/images/home/diagram.png" alt="Diagram" />
+              <img src="/images/home/diagram.png" />
               <span className="smallGrey">Qazanc və Xərc Hesabatları</span>
             </div>
             <div className="imgCripto">
-              <img src="/images/home/cripto.png" alt="Crypto" />
+              <img src="/images/home/cripto.png" />
               <span>Dəstəklənən Kriptovalyutalar</span>
             </div>
             <div className="imgSupport">
-              <img src="/images/home/classsupport.png" alt="Image" />
+              <img src="/images/home/classsupport.png" />
               <span>Dünya Səviyyəli Dəstək</span>
               <span>
                 İstədiyiniz vaxt, hər yerdə mütəxəssis dəstəyi əldə edin,
@@ -44,7 +44,7 @@ function NextGenBanking() {
             <div className="app">
               <div className="title">Mobil və masaüstü tətbiq</div>
               <div className="imgPhone">
-                <img src="/images/home/phone.png" alt="Phone" />
+                <img src="/images/home/phone.png" />
               </div>
             </div>
           </div>

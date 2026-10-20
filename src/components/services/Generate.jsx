@@ -21,7 +21,7 @@ function Generate() {
       <div className="container">
         <div className="box">
           <div className="img">
-            <img src="/images/generate1.png" alt="Image" />
+            <img src="/images/generate1.png"/>
           </div>
           <div className="content">
             <div className="title">Asanlıqla potensial müştərilər yaradın</div>
@@ -60,7 +60,7 @@ function Generate() {
             </Link>
           </div>
           <div className="img">
-            <img src="/images/generate2.png" alt="Image" />
+            <img src="/images/generate2.png" />
           </div>
         </div>
       </div>

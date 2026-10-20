@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link, useNavigate } from 'react-router-dom';
@@ -34,14 +34,14 @@ function Option() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setOptions(options.filter((option) => option.id !== id));
     } catch (err) {
       console.log("Error: ", err);
     }
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [value, setValue] = useState('');
   const [errors, setErrors] = useState({});
 
@@ -62,7 +62,7 @@ function Option() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -115,14 +115,14 @@ function Option() {
             </div>
             <div className="row p-4">
               <h2>Options of FAQs</h2>
-              {options?.length == 0 ? (
+              {options?.length === 0 ? (
                 <p>No option found</p>
               ) : (
               <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
                   <tr>
-                    <td scope="col">Name</td>
-                    <td scope="col">Action</td>
+                    <th scope="col">Name</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>

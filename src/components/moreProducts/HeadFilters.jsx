@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import {
-  sortByDateAdded,
-  sortByHighestPrice,
-  sortByLowestPrice,
-  resetFilters,
-} from "../../slices/productsSlices";
+import { useSelector} from "react-redux";
+// import { useState } from "react";
+// import {
+//   sortByDateAdded,
+//   sortByHighestPrice,
+//   sortByLowestPrice,
+//   resetFilters,
+// } from "../../slices/productsSlices";
 
 function HeadFilters({
-  productsCount,
+  // productsCount,
   filters,
-  fetchFilteredProducts,
+  // fetchFilteredProducts,
   handleFilterChange,
   formatFilters,
 }) {

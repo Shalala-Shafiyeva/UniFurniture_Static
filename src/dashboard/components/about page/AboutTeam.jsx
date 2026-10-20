@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
@@ -81,7 +81,7 @@ function AboutTeam() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -114,7 +114,7 @@ function AboutTeam() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -139,7 +139,7 @@ function AboutTeam() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setTitles(titles.filter((title) => title.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -157,7 +157,7 @@ function AboutTeam() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setMembers(members.filter((member) => member.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -334,15 +334,15 @@ function AboutTeam() {
             </div>
             <div className="row p-4">
               <h2>Titles of About page</h2>
-              {titles.length == 0 ? (
+              {titles.length === 0 ? (
                 <p>No title found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Title</td>
-                      <td scope="col">Published</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Title</th>
+                      <th scope="col">Published</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -382,17 +382,17 @@ function AboutTeam() {
             </div>
             <div className="row p-4">
               <h2>Members of team About page</h2>
-              {members.length == 0 ? (
+              {members.length === 0 ? (
                 <p>No member found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Name</td>
-                      <td scope="col">Surname</td>
-                      <td scope="col">Position</td>
-                      <td scope="col">Profile</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Name</th>
+                      <th scope="col">Surname</th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Profile</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

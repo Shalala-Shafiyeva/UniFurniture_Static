@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
-import {
-  removeFromCart,
-  increaseAmount,
-  decreaseAmount,
-} from "../../slices/cartSlice";
+// import {
+//   removeFromCart,
+//   increaseAmount,
+//   decreaseAmount,
+// } from "../../slices/cartSlice";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
 function CartOrder() {
   const cart = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen((prev) => !prev);
   };
   const handleCartLength = () => {
-    if (cart.length - 1 == 0) {
+    if (cart.length - 1 === 0) {
       setOpen((prev) => !prev);
     }
   };
@@ -25,7 +25,7 @@ function CartOrder() {
   const queryClient = useQueryClient();
 
   // Fetch cart products
-  const { data: products = [], isLoading: isFetchingCart } = useQuery(
+  const { data: products = []} = useQuery(
     "cartProducts",
     async () => {
       const response = await fetch("http://localhost:8000/api/basket/index", {
@@ -44,7 +44,7 @@ function CartOrder() {
   );
 
   // Fetch ratings of products
-  const { data: rating = [], isLoading: isFetchingRating } = useQuery(
+  const { data: rating = [] } = useQuery(
     "ratingProducts",
     async () => {
       const response = await fetch("http://localhost:8000/api/basket/index", {
@@ -63,7 +63,7 @@ function CartOrder() {
   );
 
   // Fetch ratings of products
-  const { data: reviews = [], isLoading: isFetchingReviews } = useQuery(
+  const { data: reviews = [] } = useQuery(
     "reviewsProducts",
     async () => {
       const response = await fetch("http://localhost:8000/api/basket/index", {

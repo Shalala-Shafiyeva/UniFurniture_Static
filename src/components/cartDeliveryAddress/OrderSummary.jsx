@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+// import { useState } from "react";
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function OrderSummary({ activateBtn }) {
   const cart = useSelector((state) => state.cart.cart);
-  const [freeDelivery, setFreenDelivery] = useState(true);
-  const [orderAbove, setOrderAbove] = useState(false);
-  const totalAmount = cart.reduce((acc, current) => acc + current.amount, 0);
+  // const [freeDelivery, setFreenDelivery] = useState(true);
+  // const [orderAbove, setOrderAbove] = useState(false);
+  // const totalAmount = cart.reduce((acc, current) => acc + current.amount, 0);
   let totalPrice = cart.reduce(
     (acc, current) => acc + current.price * current.amount,
     0
@@ -16,10 +16,10 @@ function OrderSummary({ activateBtn }) {
   // const totalDiscount =
   //   (totalPrice * cart.reduce((acc, current) => acc + current.discount, 0)) /
   //   100;
-  const handleActive = () => {
-    setFreenDelivery((prev) => !prev);
-    setOrderAbove((prev) => !prev);
-  };
+  // const handleActive = () => {
+  //   setFreenDelivery((prev) => !prev);
+  //   setOrderAbove((prev) => !prev);
+  // };
 
   // Fetch discount of products in the cart
   const { data: totalDiscount = 0 } = useQuery("totalDiscount", async () => {

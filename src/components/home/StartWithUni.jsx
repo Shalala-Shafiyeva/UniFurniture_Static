@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import data from "../../data.json";
 
@@ -29,11 +28,11 @@ function StartWithUni() {
         </div>
         <div className="contentUni">
           {data.startWithUni.map((card) => {
-            if (card.id % 2 != 0) {
+            if (card.id % 2 !== 0) {
               return (
                 <div className="box" key={card.id}>
                   <div className="img">
-                    <img src={card.img} alt="Image" />
+                    <img src={card.img} />
                   </div>
                   <div className="desc">
                     <span>{card.title}</span>
@@ -49,7 +48,7 @@ function StartWithUni() {
                     <p>{card.content}</p>
                   </div>
                   <div className="img">
-                    <img src={card.img} alt="Image" />
+                    <img src={card.img} />
                   </div>
                 </div>
               );

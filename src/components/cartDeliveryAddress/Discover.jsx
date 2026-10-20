@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Discover() {
@@ -18,7 +17,7 @@ function Discover() {
           <Link to="/login">Başlayın</Link>
         </div>
         <div className="img">
-          <img src="/images/discover.png" alt="Image" />
+          <img src="/images/discover.png"/>
         </div>
       </div>
     </section>

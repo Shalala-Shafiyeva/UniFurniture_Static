@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function ServiceCommite() {
@@ -40,7 +40,7 @@ function ServiceCommite() {
             </Link>
           </div>
           <div className="img">
-            <img src="/images/shop/commit.png" alt="Image" />
+            <img src="/images/shop/commit.png" />
           </div>
         </div>
       </section>

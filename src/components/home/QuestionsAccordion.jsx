@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import data from "../../data.json";
 
 function QuestionsAccordion() {
-  var filterBtns = ["1", "2", "3"];
+  var filterBtns = [1, 2, 3];
   // let [selectedOption, setSelectedOption] = useState("1");
   let [filteredItems, setFilteredItems] = useState(data.homeQuestions);
   const [activeItem, setActiveItem] = useState(null);
@@ -14,13 +14,13 @@ function QuestionsAccordion() {
   let handleFilterButtonClick = (option) => {
     setSelectedOption(option);
     setFilteredItems(
-      data.homeQuestions.filter((item) => item.option == option)
+      data.homeQuestions.filter((item) => item.option === option)
     );
     setActiveItem(null);
   };
 
   useEffect(() => {
-    setFilteredItems(data.homeQuestions.filter((item) => item.option == "1"));
+    setFilteredItems(data.homeQuestions.filter((item) => item.option ===1));
   }, []);
 
   //with backend

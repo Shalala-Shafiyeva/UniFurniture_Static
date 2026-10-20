@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+// import  {  useState } from "react";
 import data from "../../data.json";
 import { Link } from "react-router-dom";
 
 function ServiceArticles() {
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
   // const [articles, setArticles] = useState([]);
   // const fetchTitle = async () => {
   //   try {
@@ -51,13 +51,13 @@ function ServiceArticles() {
   return (
     <section className="articles" data-aos="fade-up">
       <div className="container">
-        <div
+        {/* <div
           className="head"
           dangerouslySetInnerHTML={{ __html: addClassToWord(title.name) }}
-        ></div>
-        {/* <div className="head">
+        ></div> */}
+        <div className="head">
           Browse <span>questions</span> by category
-        </div> */}
+        </div>
         <div className="articleItemss">
           {/* with backend */}
           {/* {articles?.map((article) => (

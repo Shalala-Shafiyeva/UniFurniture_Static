@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Color() {
   const [colors, setColors] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [value, setValue] = useState("");
   const [errors, setErrors] = useState({});
   const token = localStorage.getItem("token");
@@ -46,7 +46,7 @@ function Color() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setColors(colors.filter((color) => color.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -71,13 +71,13 @@ function Color() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
         setValue("");
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           //   navigate("/dashboard/products");
           return;
         }

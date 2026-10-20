@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
@@ -41,7 +41,7 @@ function AboutParalax() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setParalaxes(paralaxes.filter((paralax) => paralax.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -80,7 +80,7 @@ function AboutParalax() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -192,17 +192,17 @@ function AboutParalax() {
             </div>
             <div className="row p-4">
               <h2>Paralaxes of About page</h2>
-              {paralaxes?.length == 0 ? (
+              {paralaxes?.length === 0 ? (
                 <p>No paralax found</p>
               ) : (
                 <table className="table table-striped table-bordered">
                   <thead className="thead-dark">
                     <tr>
-                      <td scope="col">Title</td>
-                      <td scope="col">Content</td>
-                      <td scope="col">Image</td>
-                      <td scope="col">Publish</td>
-                      <td scope="col">Actions</td>
+                      <th scope="col">Title</th>
+                      <th scope="col">Content</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Publish</th>
+                      <th scope="col">Actions</th>
                     </tr>
                   </thead>
                   <tbody>

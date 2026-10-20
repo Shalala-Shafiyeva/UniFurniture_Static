@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../navbar/Navbar';
 import Sidebar from '../sidebar/Sidebar';
 import { Link } from 'react-router-dom';
@@ -43,7 +43,7 @@ function PromotionSlider() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
       setSliders(sliders.filter((slider) => slider.id !== id));
     } catch (err) {
       console.log("Error: ", err);
@@ -71,7 +71,7 @@ function PromotionSlider() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -99,7 +99,7 @@ function PromotionSlider() {
           },
         }
       );
-      const result = await response.json();
+      // const result = await response.json();
     } catch (error) {
       console.log("Error:", error);
     }
@@ -204,17 +204,17 @@ function PromotionSlider() {
           </div>
           <div className="row p-4">
             <h2>Exellence sections of Shop page</h2>
-            {sliders?.length == 0 ? (
+            {sliders?.length === 0 ? (
             <p>No item found</p>
           ) : (
             <table className="table table-striped table-bordered">
               <thead className="thead-dark">
                 <tr>
-                  <td scope="col">Title</td>
-                  <td scope="col">Content</td>
-                  <td scope="col">Image</td>
-                  <td scope="col">Publish</td>
-                  <td scope="col">Actions</td>
+                  <th scope="col">Title</th>
+                  <th scope="col">Content</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Publish</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>

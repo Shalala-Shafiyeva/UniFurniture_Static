@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import { useState } from "react";
@@ -27,7 +26,7 @@ function MobileMode() {
       const result = await response.json();
       console.log(result);
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
       } else {
         setErrors({});
@@ -136,11 +135,11 @@ function MobileMode() {
         <div className="continueWith">
           <span>Və ya davam edin</span>
           <div className="btns">
-            <a href="">
+            <a href="#">
               <img src="/images/google.png" alt="Google Account" />
               <span>Google</span>
             </a>
-            <a href="">
+            <a href="#">
               <img src="/images/twitter.png" alt="Twitter Account" />
               <span>Twitter</span>
             </a>

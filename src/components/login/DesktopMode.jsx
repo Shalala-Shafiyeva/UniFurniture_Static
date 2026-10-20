@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -26,10 +25,10 @@ function DesktopMode() {
 
       const result = await response.json();
 
-      if (response.status == 422) {
+      if (response.status === 422) {
         setErrors(result.errors || {});
         setInvalidCredentials("");
-      } else if (response.status == 401) {
+      } else if (response.status === 401) {
         setInvalidCredentials(result.message);
         setErrors({});
       } else {
@@ -61,7 +60,7 @@ function DesktopMode() {
       <div className="circle greenCircle"></div>
       <div className="circle darkgreenCircle"></div>
       <div className="img">
-        <img src="/images/illustration.png" alt="Login image" />
+        <img src="/images/illustration.png" />
       </div>
       <div className="loginPage">
         <h3>
@@ -140,11 +139,11 @@ function DesktopMode() {
           <div className="continueWith">
             <span>Və ya davam edin</span>
             <div className="btns">
-              <a href="">
+              <a href="#">
                 <img src="/images/google.png" alt="Google Account" />
                 <span>Google</span>
               </a>
-              <a href="">
+              <a href="#">
                 <img src="/images/twitter.png" alt="Twitter Account" />
                 <span>Twitter</span>
               </a>

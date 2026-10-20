@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./header.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
-import { useMutation, useQuery, useQueryClient } from "react-query";
-import { refresh } from "aos";
+import {  useQuery, useQueryClient } from "react-query";
+// import { refresh } from "aos";
 
 function Header() {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ function Header() {
     }
   };
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   // Fetch count of products in the cart
   const { data: count = 0 } = useQuery("cartCount", async () => {
     const response = await fetch(
@@ -54,7 +54,7 @@ function Header() {
     return result.data || 0;
   });
 
-  const { cart } = useSelector((state) => state.cart);
+  // const { cart } = useSelector((state) => state.cart);
   const [openMenu, setOpenMenu] = useState(false);
   const [openBasket, setOpenBasket] = useState(false);
   const handleOpenMenu = () => {

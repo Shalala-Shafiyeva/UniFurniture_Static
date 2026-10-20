@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { addToCart } from "../../slices/cartSlice";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,7 +7,7 @@ import { useMutation, useQueryClient } from "react-query";
 
 function Main({ product }) {
   let dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { type, id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
@@ -16,21 +16,21 @@ function Main({ product }) {
   // const [img, setImg] = useState("");
 
   useEffect(() => {
-    setImg(product.colorImgs[colorIndex].imgs[0]);
+    setImg(product?.colorImgs[colorIndex]?.imgs[0]);
   }, [colorIndex, type, id]);
 
   const handleSmallImg = (e) => {
     const smallImgs = [...e.currentTarget.parentElement.children];
-    smallImgs.map((child) => {
+    smallImgs?.map((child) => {
       //child.classList.remove("active");
       child.style.border = "2px solid #6d6e7423";
     });
 
-    product?.colorImgs[colorIndex]?.imgs.map((img) => {
+    product?.colorImgs[colorIndex]?.imgs?.map((img) => {
       try {
         let src = e.target.src.split("/");
         src = "/" + src.slice(3).join("/");
-        if (img == src) {
+        if (img === src) {
           //e.currentTarget.classList.add("active");
           e.currentTarget.style.border = "2px solid #00A991";
         }
@@ -117,7 +117,7 @@ function Main({ product }) {
           body: JSON.stringify({ rating }),
         }
       );
-      if (response.status == 200) {
+      if (response.status === 200) {
         // fetchAverageRating();
       }
     } catch (error) {
@@ -155,37 +155,37 @@ function Main({ product }) {
   //Basket logic
   const queryClient = useQueryClient();
   // Mutation to add product to the cart
-  const addProductToCart = useMutation(
-    async ({ productId, productColor, colorImage }) => {
-      const response = await fetch(`http://localhost:8000/api/basket/store`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          product_id: productId,
-          quantity: quantity,
-          product_color: productColor,
-          color_image: colorImage,
-        }),
-      });
-      return response.json();
-    },
-    {
-      onSuccess: (data) => {
-        if (data.success) {
-          toast.success(data.message);
-          queryClient.invalidateQueries("cartProducts");
-          queryClient.invalidateQueries("cartTotal");
-          queryClient.invalidateQueries("cartCount");
-          queryClient.invalidateQueries("totalDiscount");
-        } else {
-          toast.error(data.message || "Məhsult səbətdən çıxarılmadı");
-        }
-      },
-    }
-  );
+  // const addProductToCart = useMutation(
+  //   async ({ productId, productColor, colorImage }) => {
+  //     const response = await fetch(`http://localhost:8000/api/basket/store`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //       body: JSON.stringify({
+  //         product_id: productId,
+  //         quantity: quantity,
+  //         product_color: productColor,
+  //         color_image: colorImage,
+  //       }),
+  //     });
+  //     return response.json();
+  //   },
+  //   {
+  //     onSuccess: (data) => {
+  //       if (data.success) {
+  //         toast.success(data.message);
+  //         queryClient.invalidateQueries("cartProducts");
+  //         queryClient.invalidateQueries("cartTotal");
+  //         queryClient.invalidateQueries("cartCount");
+  //         queryClient.invalidateQueries("totalDiscount");
+  //       } else {
+  //         toast.error(data.message || "Məhsult səbətdən çıxarılmadı");
+  //       }
+  //     },
+  //   }
+  // );
 
   return (
     <section className="mainDetails">
@@ -235,7 +235,7 @@ function Main({ product }) {
               <div className="imgs">
                 <div className="mainImg">
                   {/* <img src={selectedImage} alt="Product image" /> */}
-                  <img src={img} alt="Product image" />
+                  <img src={img} />
                 </div>
                 {/* without backend */}
                 <div className="smallImgs">
@@ -247,7 +247,7 @@ function Main({ product }) {
                         handleSmallImg(e);
                       }}
                     >
-                      <img src={img} alt="Product image" />
+                      <img src={img} />
                     </div>
                   ))}
                 </div> 
@@ -413,7 +413,7 @@ function Main({ product }) {
                 {product.colorImgs.map((color, index) => (
                   <div className="canChoose" key={color.id}>
                     <div
-                      className={`img ${colorIndex == index ? "active" : ""}`}
+                      className={`img ${colorIndex === index ? "active" : ""}`}
                       onClick={() => handleColorChange(index)}
                     >
                       <img src={color.imgs[0]} alt="Product" />
@@ -443,7 +443,7 @@ function Main({ product }) {
                   <div className="chosedColor">
                      Rəngi seçin: {product.colorImgs[colorIndex].colorName}
                   </div> 
-                  <img src={product.image} alt="Product image" />
+                  <img src={product.image}/>
                   
                   {/* with backend */}
                   {/* <div className="chosedColor">
@@ -461,7 +461,7 @@ function Main({ product }) {
                         handleSmallImg(e);
                       }}
                     >
-                      <img src={img} alt="Product image" />
+                      <img src={img} />
                     </div>
                   ))}
                   {/* with backend */}

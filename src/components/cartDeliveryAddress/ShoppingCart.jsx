@@ -1,9 +1,8 @@
-import React from "react";
 import { useState } from "react";
 import CustomerInfo from "./CustomerInfo";
 import OrderSummary from "./OrderSummary";
 import DeliveryAddress from "./DeliveryAddress";
-import BillingAddress from "./BillingAddress";
+// import BillingAddress from "./BillingAddress";
 import CartOrder from "./CartOrder";
 import PaymentMethod from "./PaymentMethod";
 

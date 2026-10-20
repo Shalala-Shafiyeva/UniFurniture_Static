@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Autoplay,
   Navigation,
@@ -44,16 +43,16 @@ function TrendFurnitures() {
                 <SwiperSlide className="wrapper" key={index}>
                   <Link to={`/product/${product.type}/${product.id}`}>
                     <div className="img">
-                      <img src={product.img} alt="Product image" />
+                      <img src={product.img} />
                     </div>
                     <div className="titleRating">
                       <span className="title">{product.fullTitle}</span>
                       <div className="stars">
-                        <img src="/images/star.png" alt="star" />
-                        <img src="/images/star.png" alt="star" />
-                        <img src="/images/star.png" alt="star" />
-                        <img src="/images/star.png" alt="star" />
-                        <img src="/images/star.png" alt="star" />
+                        <img src="/images/star.png" />
+                        <img src="/images/star.png"  />
+                        <img src="/images/star.png"  />
+                        <img src="/images/star.png"  />
+                        <img src="/images/star.png"  />
                       </div>
                     </div>
                     <span className="price">

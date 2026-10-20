@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import data from "../../data.json";
 
 function Gallary() {
-  const [images, setImages] = useState([]);
+  // const [images, setImages] = useState([]);
   // const fetchImages = async () => {
   //   try {
   //     const response = await fetch(
@@ -44,7 +44,7 @@ function Gallary() {
         {/* without backend */}
         {data?.gallary?.map((item) => (
           <div key={item.id} className="img">
-            <img  src={item.img} alt="Image" />
+            <img  src={item.img} />
           </div>
         ))}
       </div>

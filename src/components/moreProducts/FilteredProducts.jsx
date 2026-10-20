@@ -1,6 +1,5 @@
-import React, { useCallback } from "react";
 import data from "../../data.json";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
@@ -72,19 +71,19 @@ function FilteredProducts({ fetchedProducts, filteredKey }) {
   const fullStar = "/images/star.png";
   const emptyStar = "/images/emptyStar.png";
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <img
-          key={i}
-          src={i <= rating ? fullStar : emptyStar}
-          alt={`${i <= rating ? "Full" : "Empty"} Star`}
-        />,
-      );
-    }
-    return stars;
-  };
+  // const renderStars = (rating) => {
+  //   const stars = [];
+  //   for (let i = 1; i <= 5; i++) {
+  //     stars.push(
+  //       <img
+  //         key={i}
+  //         src={i <= rating ? fullStar : emptyStar}
+  //         alt={`${i <= rating ? "Full" : "Empty"} Star`}
+  //       />,
+  //     );
+  //   }
+  //   return stars;
+  // };
 
   return (
     <section className="filteredProducts">
