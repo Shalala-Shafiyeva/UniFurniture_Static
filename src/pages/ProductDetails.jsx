@@ -15,7 +15,7 @@ function ProductDetails() {
   const allProducts = useSelector((state) => state.products.products);
   const { type, id } = useParams();
   const product = allProducts.find(
-    (prod) => prod.id === id && prod.type === type
+    (prod) => prod.id == id && prod.type == type
   );
   // console.log(product, "product");
 

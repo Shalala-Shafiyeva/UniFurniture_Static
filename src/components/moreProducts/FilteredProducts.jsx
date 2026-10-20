@@ -101,7 +101,8 @@ function FilteredProducts({ fetchedProducts, filteredKey }) {
                 {currentProducts?.map((product, index) => (
                   <Link
                     className="product"
-                    to={`/product/${product?.category?.name?.toLowerCase()}/${product?.id}`}
+                    // to={`/product/${product?.category?.name?.toLowerCase()}/${product?.id}`}
+                    to={`/product/${product?.type?.toLowerCase()}/${product?.id}`}
                     key={product?.id}
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
